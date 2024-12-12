@@ -64,6 +64,18 @@ static const std::vector<std::string> TYPES = {"蓝牌", "黄牌单层", "白牌
         configuration.rec_confidence_threshold = 0.5f;
         configuration.box_conf_threshold = 0.30f;
         configuration.threads = 1;
+
+        // 识别速度降低，提高识别精度 这样配置试试
+        /*
+        configuration.models_path = (char *) modelPathC;
+        configuration.max_num = 1;
+        configuration.det_level = DETECT_LEVEL_HIGH;
+        configuration.use_half = false;
+        configuration.nms_threshold = 0.85f;
+        configuration.rec_confidence_threshold = 0.95f;
+        configuration.box_conf_threshold = 0.50f;
+        configuration.threads = 1;
+        */
         
         // Instantiate the license plate recognition context
         ctx = HLPR_CreateContext(&configuration);
